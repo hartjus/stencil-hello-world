@@ -3,7 +3,10 @@ exports.config = {
   outputTargets:[
     { type: 'dist' },
     { type: 'www' }
-  ]
+  ],
+  namespace: 'hello-world',
+  generateDistribution: true,
+  generateWWW: false
 };
 
 exports.devServer = {

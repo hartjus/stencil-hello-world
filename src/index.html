@@ -9,6 +9,22 @@
 </head>
 <body>
 
+  <div id="root"></div>
+
+  <script>
+    let el = document.createElement('hello-world');
+
+    el.name = "Test";
+    el.showButton = true;
+
+    el.addEventListener('sayName', (event) => {
+      alert(event.detail);
+    });
+
+    document.getElementById('root').appendChild(el);
+  
+  </script>
+
   <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 
 </body>

@@ -25,29 +25,30 @@ declare global {
 
 
 declare global {
-  interface HTMLMyComponentElement extends HTMLStencilElement {
-    'first': string;
-    'last': string;
+  interface HTMLHelloWorldElement extends HTMLStencilElement {
+    'name': string;
+    'showButton': boolean;
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLHelloWorldElement: {
+    prototype: HTMLHelloWorldElement;
+    new (): HTMLHelloWorldElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'hello-world': HTMLHelloWorldElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'hello-world': HTMLHelloWorldElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'hello-world': JSXElements.HelloWorldAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface HelloWorldAttributes extends HTMLAttributes {
+      'name'?: string;
+      'onSayName'?: (event: CustomEvent) => void;
+      'showButton'?: boolean;
     }
   }
 }
